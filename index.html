@@ -1,0 +1,24 @@
+---
+layout: default
+title: Home
+---
+<table class="table table-bordered">
+  <tr>
+    <td></td>
+    {% for language in site.data.languages %}
+    <td>{{ language }}</td>
+    {% endfor %}
+  </tr>
+  {% for code in site.data.codes %}
+  <tr>
+    <td>{{ code[0] }}</td>
+    {% for language in site.data.languages %}
+    <td>
+      <code class="prettyprint">
+        {{ code[1][language] }}
+      </code>
+    </td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
+</table>

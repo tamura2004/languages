@@ -1,0 +1,73 @@
+変数:
+  swift: let a&#58; Int
+  scala: val a&#58; Int
+定数:
+  swift: var a&#58; Int
+  scala: var a&#58; Int
+１行に１つの数字:
+  crystal: gets.to_s.to_i
+  swift: Int(readLine()!)!
+  scala:
+    import io.StdIn.readLine<br>
+    readLine().toInt
+１行に複数の数字:
+  crystal: gets.to_s.split.map(&.to_i)
+  swift: "readLine()!.split(separator: \" \").map { Int($0)! }"
+  scala: "readLine().split(\" \").map(_.Int)"
+n回繰り返す:
+  crystal: n.times { doIt }
+  swift: for i in 0..&ltn { doIt }
+  scala: for (i <- 0 until n) { doIt }
+index付きで繰返す:
+  crystal: arr.each_with_index do |v, i|
+  swift: for (i, v) in arr { doIt }
+【文字列】先頭からn文字:
+  crystal: s[...n]
+  swift: String(s.prefix(n))
+【文字列】末尾からn文字:
+  crystal: s[-n..]
+  swift: String(s.suffix(n))
+【文字列】大文字化:
+  crystal: s.upcase
+  swift: s.uppercased()
+【文字列】小文字化:
+  crystal: s.downcase
+  swift: s.lowercased()
+【文字列】文字の配列へ:
+  crystal: s.chars
+  swift: Array(s)
+【文字列】文字の配列から:
+  crystal: c.join
+  swift: String(c)
+【配列】空配列:
+  swift: var arr = [Int]()
+  crystal: arr = [] of Int32
+【配列】要素の追加:
+  crystal: arr << e
+  swift: arr.append(e)
+【配列】参照:
+  crystal: arr[i]
+  scala: arr(i)
+  swift: arr[i]
+【配列】要素の有無:
+  crystal: e.in?(arr)
+  swift: arr.contains(e)
+【配列】フィルタ:
+  crystal: arr.select(&.> x)
+  swift: arr.filter { $0 > x }
+【配列】マップ:
+  crystal: arr.map(&.+ 10)
+  swift: arr.map { $0 + 10 }
+【配列】空判定:
+  crystal: "arr.empty?"
+  swift: arr.isEmpty
+【配列】最小の要素:
+  crystal: arr.min
+  swift: arr.min()
+【配列】長さ:
+  crystal: arr.size
+  swift: arr.count
+【配列】結合:
+  swift: "arr.joined(separator: \" \")"
+  crystal: "arr.join(\" \")"
+  
