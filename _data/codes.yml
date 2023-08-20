@@ -39,6 +39,15 @@ index付きで繰返す:
 【文字列】文字の配列から:
   crystal: c.join
   swift: String(c)
+【文字列】正規表現の置換:
+  crystal: s.gsub(/[aiueo]/,"")
+  swift: |-
+    s.replacingOccurrences(<br>
+      &nbsp;&nbsp;of: "[aiueo]",<br>
+      &nbsp;&nbsp;with: "",<br>
+      &nbsp;&nbsp;options: .regularExpression,<br>
+      &nbsp;&nbsp;range: nil<br>
+    )
 【配列】空配列:
   swift: var arr = [Int]()
   crystal: arr = [] of Int32
