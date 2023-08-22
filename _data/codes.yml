@@ -48,6 +48,9 @@ index付きで繰返す:
       &nbsp;&nbsp;options: .regularExpression,<br>
       &nbsp;&nbsp;range: nil<br>
     )
+【真偽値】値を反転:
+    crystal: b = !b
+    swift: b.toggle()
 【配列】空配列:
   swift: var arr = [Int]()
   crystal: arr = [] of Int32
@@ -61,9 +64,13 @@ index付きで繰返す:
 【配列】要素の有無:
   crystal: e.in?(arr)
   swift: arr.contains(e)
+【配列】0からn-1まで:
+  crystal: (0...n).to_a
+  swift: Array(0..<n)
 【配列】フィルタ:
   crystal: arr.select(&.> x)
   swift: arr.filter { $0 > x }
+  scala: (0 until n).toArray
 【配列】マップ:
   crystal: arr.map(&.+ 10)
   swift: arr.map { $0 + 10 }
@@ -79,4 +86,3 @@ index付きで繰返す:
 【配列】結合:
   swift: "arr.joined(separator: \" \")"
   crystal: "arr.join(\" \")"
-  
