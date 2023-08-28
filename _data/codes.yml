@@ -1,3 +1,12 @@
+【入力】"1"を変数xに読込:
+  crystal: x = gets.to_s.to_i64
+  swift: var x = Int(readLine()!)!
+  scala: var x = io.StdIn.readLine().toInt
+【入力】"1 2"を変数x,yに読込:
+  crystal: x, y = gets.to_s.split.map(&.to_i64)
+  swift: |
+    let line = readLine()!.split(separator: " ").map { Int($0)! }<br>
+    var (x, y) = (line[0], line[1])
 変数:
   swift: let a&#58; Int
   scala: val a&#58; Int

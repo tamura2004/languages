@@ -2,6 +2,55 @@
 layout: default
 title: Home
 ---
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  {% for language in site.data.languages %}
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link {% if language == 'crystal' %}active{% endif %}"
+        id="{{language}}-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#{{language}}"
+        type="button"
+        role="tab"
+        aria-controls="{{language}}"
+        aria-selected="{{language == 'crystal'}}"
+      >
+        {{language}}
+      </button>
+    </li>
+  {% endfor %}
+</ul>
+
+<div class="tab-content" id="myTabContent">
+  {% for language in site.data.languages %}
+    <div
+      class="tab-pane fade {% if language == 'crystal' %}show active{% endif %}"
+      id="{{language}}"
+      role="tabpanel"
+      aria-labelledby="{{language}}-tab"
+    >
+      <table class="table table-bordered table-responsive">
+        <tr>
+          <th>処理</th>
+          <th>コード</th>
+        </tr>
+        {% for code in site.data.codes %}
+          {% if  code[1][language] %}
+            <tr>
+              <td>{{ code[0] }}</td>
+              <td>
+                <code class="prettyprint">
+                  {{ code[1][language] }}
+                </code>
+              </td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+      </table>
+    </div>
+  {% endfor %}
+</div>
+<!--
 <table class="table table-bordered table-responsive">
   <tr>
     <td></td>
@@ -21,4 +70,4 @@ title: Home
     {% endfor %}
   </tr>
   {% endfor %}
-</table>
+</table> -->
